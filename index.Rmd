@@ -1,0 +1,37 @@
+---
+title: "Incarceration Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+library("knitr")
+source("analysis.R")
+```
+
+## Introduction
+Incarceration is one of the most concerned problems in the United States in many years. Specifically, people of color has been treated with _overpolicing_ and _disproportionate_ in incarceration. The data about incarceration has been compiled by Vera Institute in a long time about the incarceration in different race. Based on the dataset, this report focuses mainly on black jail population in all counties over time because black people have been victims in this problem. There are 5 relevant values for this variable. For instance, the most recent average of black jail population accross all the counties is `r recent_average_black_jail_pop`. Additionally, the highest black jail population is found in `r place_highest_black_jail_pop` in `r year_highest_black_jail_pop`. Moreover, an example of total black jail population in a state - Washington - is also calculated which is `r total_wa`. Besides, top 5 of the counties which have highest black jail population are also measured and used in the **trends over time chart** below. 
+
+## Trends over time chart
+
+```{r echo = F, , message = F, warning= F}
+black_jail_pop_over_time_in_top_5
+```
+
+This chart shows the trends of black jail population over years in top 5 counties have the highest total black jail population in the United States. Top 5 counties includes New York, Los Angeles, Cook, Philadelphia, and Harris County. This chart is included in this reported to indicate the overal trends of incarceration for black people. From the chart, New York had been the county with the most highest black jail population from around 1990s to 2015. The overall trend of black jail population in top 5 counties is decreasing, which is probably because the racism in the U.S are developing over time.
+
+## Variable Comparison Chart
+```{r echo = F, , message = F, warning= F}
+variable_comparison_chart 
+```
+
+This chart shows the comparison between black jail population and white jail population to illustrate how disproportionate incarceration in various race. In this chart, the black jail population is much larger than white jail population. For example, the highest black jail population is over 10,000, while the maximum in white jail population is approximately 7,300.
+
+## Map
+```{r echo = F}
+black_jail_map
+```
+
+This map is used to show how the black jail population different in different locations. Specifically, this map helps the reader easily to know where the highest or lowest black jail population located, and the gradient of color shows how much different in the black jail population in a county compared to the others. Furthermore, the places with the red color - highest black jail population - is mostly found in the big county with high population. For example, Los Angeles is shown as a highest black jail population with the red color.   
